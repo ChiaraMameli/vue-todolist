@@ -1,6 +1,10 @@
 const root = new Vue({
     el: '#root',
     data: {
+        newTask: {
+            text: '',
+            done: false,
+        },
         tasks: [
             {
                 text: 'Fare la spesa',
@@ -27,6 +31,9 @@ const root = new Vue({
     methods: {
         removeTask(index){
             this.tasks.splice(index, 1);
+        },
+        addTask(){
+            this.tasks.push(this.newTask)
         }
     }
 
