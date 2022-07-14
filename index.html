@@ -21,8 +21,11 @@
         </header>
         <main>
             <ul>
-                <li class="d-flex justify-content-between"><input v-model="newTask.text" type="text" placeholder="Aggiungi" class="form-control" id="add-task"><button @click="addTask" type="button" class="btn btn-outline-secondary" >+</button></li>
-                <li v-for="(task,i) in tasks" class="d-flex justify-content-between">{{task.text}} <button @click="removeTask(i)" type="button" class="btn-close"></button></li>
+                <li class="d-flex justify-content-between"><input v-model="newTask" @keyup.enter="addTask" type="text" placeholder="Aggiungi" class="form-control"><button @click="addTask" type="button" class="btn btn-outline-secondary" >+</button></li>
+                <li v-for="(task,i) in tasks" class="d-flex justify-content-between">
+                    <del v-if="task.done">{{task.text}}</del> 
+                    <span v-else>{{task.text}} </span>
+                    <button @click="removeTask(i)" type="button" class="btn-close"></button></li>
             </ul>
         </main>
     </div>
