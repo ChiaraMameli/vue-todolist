@@ -1,0 +1,12 @@
+/* GENERICS */
+
+ul{
+    list-style-type: none;
+}
+
+/* CONTAINER */
+.my-container {
+    width: 50vw;
+    margin: 10vh auto;
+}
+
